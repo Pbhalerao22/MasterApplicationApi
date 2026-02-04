@@ -6,10 +6,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MasterApplicationApi.DBContext;
 
-[Keyless]
 [Table("tbl_adm_forgetpassword")]
 public partial class TblAdmForgetpassword
 {
+    [Key]
     [Column("code")]
     public long? Code { get; set; }
 

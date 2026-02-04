@@ -6,10 +6,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MasterApplicationApi.DBContext;
 
-[Keyless]
 [Table("tbl_adm_file_ext_mapping")]
 public partial class TblAdmFileExtMapping
 {
+    [Key]
     [Column("syscode")]
     public long? Syscode { get; set; }
 

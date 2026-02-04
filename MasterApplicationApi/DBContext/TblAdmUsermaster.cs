@@ -6,10 +6,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MasterApplicationApi.DBContext;
 
-[Keyless]
 [Table("tbl_adm_usermaster")]
+[Index("Fullname", Name = "idx_user_fullname")]
+[Index("Username", Name = "idx_user_username")]
 public partial class TblAdmUsermaster
 {
+    [Key]
     [Column("code")]
     public long? Code { get; set; }
 
