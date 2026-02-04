@@ -6,10 +6,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MasterApplicationApi.DBContext;
 
-[Keyless]
+
 [Table("usp_tbl_adm_exceptionlog")]
 public partial class UspTblAdmExceptionlog
 {
+    [Key]
     [Column("code")]
     public long? Code { get; set; }
 

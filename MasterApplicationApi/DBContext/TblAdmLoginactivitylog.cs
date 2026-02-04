@@ -6,10 +6,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MasterApplicationApi.DBContext;
 
-[Keyless]
 [Table("tbl_adm_loginactivitylog")]
 public partial class TblAdmLoginactivitylog
 {
+    [Key]
     [Column("code")]
     public long? Code { get; set; }
 

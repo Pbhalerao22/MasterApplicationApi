@@ -35,6 +35,10 @@ public partial class NeonDbContext : DbContext
 
     public virtual DbSet<TblAdmUserrolemapping> TblAdmUserrolemappings { get; set; }
 
+    public virtual DbSet<TblApiLog> TblApiLogs { get; set; }
+
+    public virtual DbSet<TblTest> TblTests { get; set; }
+
     public virtual DbSet<UspTblAdmExceptionlog> UspTblAdmExceptionlogs { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -54,6 +58,18 @@ public partial class NeonDbContext : DbContext
         modelBuilder.Entity<TblAdmFileExtMapping>(entity =>
         {
             entity.Property(e => e.SysCreatedOn).HasDefaultValueSql("CURRENT_TIMESTAMP");
+        });
+
+        modelBuilder.Entity<TblApiLog>(entity =>
+        {
+            entity.Property(e => e.CreatedOn).HasDefaultValueSql("CURRENT_TIMESTAMP");
+        });
+
+        modelBuilder.Entity<TblTest>(entity =>
+        {
+            entity.HasKey(e => e.Code).HasName("TBL_TEST_pkey");
+
+            entity.Property(e => e.Code).UseIdentityAlwaysColumn();
         });
 
         OnModelCreatingPartial(modelBuilder);

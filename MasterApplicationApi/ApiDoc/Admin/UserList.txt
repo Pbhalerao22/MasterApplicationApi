@@ -1,0 +1,43 @@
+url : https://localhost:7278/api/UserMaster/UserList
+
+// request 
+
+{
+  "LoginUserId": "1",
+  "Request_Id": "2134567890",
+  "PageNumber": 1,
+  "PageSize": 10,
+  "Username": null,
+  "Fullname": null
+}
+
+//response
+
+{
+  "TotalRecords": 1,
+  "PageNumber": 1,
+  "PageSize": 10,
+  "Data": [
+    {
+      "Code": 1,
+      "Username": "Superadmin",
+      "Fullname": "Super Admin",
+      "Mobileno": "9087654321",
+      "Gender": null,
+      "Locked": false,
+      "Isadmin": false,
+      "Isaduser": true,
+      "Createdby": null,
+      "Createiondate": "2021-09-20T00:00:00",
+      "Designation": null,
+      "Dob": null,
+      "Doj": null
+    }
+  ]
+}
+
+//response headers
+ access-control-allow-origin: * 
+ content-type: application/json; charset=utf-8 
+ date: Wed,04 Feb 2026 06:23:41 GMT 
+ server: Kestrel 
